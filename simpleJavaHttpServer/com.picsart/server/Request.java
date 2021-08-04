@@ -81,6 +81,9 @@ public class Request {
     public boolean parse() throws IOException {
 
         String initialLine = inputReader.readLine();
+        if(initialLine == null){
+            return false;
+        }
         StringTokenizer tok = new StringTokenizer(initialLine);
         String[] components = new String[3];
         for (int i = 0; i < components.length; i++) {
